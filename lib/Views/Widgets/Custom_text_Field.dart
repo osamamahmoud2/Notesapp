@@ -9,14 +9,14 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       maxLines: MixLine,
-      cursorColor:KPrimaryColor,
+      cursorColor:kPrimaryColor,
       decoration: InputDecoration(
         hintText: HintText,
         
-        hintStyle: TextStyle(color: KPrimaryColor),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color:KPrimaryColor),
+        hintStyle: TextStyle(color: kPrimaryColor),
+        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color:kPrimaryColor),
             borderRadius: BorderRadius.circular(16)),
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color:KPrimaryColor),
+        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color:kPrimaryColor),
             borderRadius: BorderRadius.circular(16)),
           border: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
