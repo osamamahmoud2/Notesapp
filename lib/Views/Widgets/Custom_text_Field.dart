@@ -1,27 +1,35 @@
-import 'package:flutter/material.dart';
+import  'package:flutter/material.dart';
 import 'package:noteapp/Views/Constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.HintText,  this.MixLine=1});
-  final String HintText;
-  final int MixLine;
+  const CustomTextField(
+      {super.key, required this.hintText, this.mixLine = 1, this.onsaved});
+  final String hintText;
+  final int mixLine;
+  final void Function(String?)? onsaved;
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      maxLines: MixLine,
-      cursorColor:kPrimaryColor,
+    return TextFormField(
+      onSaved: onsaved,
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return 'Field is required';
+        }
+      },
+      maxLines: mixLine,
+      cursorColor: kPrimaryColor,
       decoration: InputDecoration(
-        hintText: HintText,
-        
-        hintStyle: TextStyle(color: kPrimaryColor),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color:kPrimaryColor),
-            borderRadius: BorderRadius.circular(16)),
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color:kPrimaryColor),
-            borderRadius: BorderRadius.circular(16)),
+          hintText: hintText,
+          hintStyle: const TextStyle(color: kPrimaryColor),
+          focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: kPrimaryColor),
+              borderRadius: BorderRadius.circular(16)),
+          enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: kPrimaryColor),
+              borderRadius: BorderRadius.circular(16)),
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(16))),
-            
+              borderSide: const BorderSide(color: Colors.white),
+              borderRadius: BorderRadius.circular(16))),
     );
   }
 }
