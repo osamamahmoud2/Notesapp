@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:noteapp/Views/Notes_View.dart';
 
 void main() {
-  runApp(NoteApp());
+  runApp(const NoteApp());
 }
 
 class NoteApp extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:noteapp/Views/Constants.dart';
+
 import 'package:noteapp/Views/Widgets/Custom_text_Field.dart';
 
 import 'Custom_Bottom.dart';
@@ -9,7 +9,7 @@ class AddNoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child:  Container(
         child:const SingleChildScrollView(

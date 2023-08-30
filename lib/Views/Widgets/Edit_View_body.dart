@@ -16,7 +16,7 @@ class EditViewBody extends StatelessWidget {
           SizedBox(
             height: 40,
           ),
-          Custom_App_bar(Titel: "Edit Note",icon: Icons.check,),
+          Custom_App_bar(titel: "Edit Note",icon: Icons.check,),
           SizedBox(
             height: 40,
           ),
