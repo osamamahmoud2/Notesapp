@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:noteapp/Views/Edit_Note_Veiw.dart';
 
@@ -8,12 +10,11 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context){
-          return const EditNoteView();
-        }));
+        Navigator.push(
+                  context, ScaleTransition5(const EditNoteView()));
       },
       child: Container(
-        padding: EdgeInsets.only(top: 24, bottom: 26,left: 16),
+        padding:const EdgeInsets.only(top: 24, bottom: 26,left: 16),
         decoration: BoxDecoration(
           color:const Color(0xffFFCC80),
           borderRadius: BorderRadius.circular(16)),
@@ -21,7 +22,7 @@ class NoteItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
           ListTile(
-            title: Text('Flutter Tips', style: TextStyle(color: Colors.black, fontSize: 26, ),),
+            title:const  Text('Flutter Tips', style: TextStyle(color: Colors.black, fontSize: 26, ),),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 16, bottom: 16),
               child: Text('Training Makes Prefect', style: TextStyle(color: Colors.black.withOpacity(0.4),fontSize: 18)),
@@ -36,4 +37,25 @@ class NoteItem extends StatelessWidget {
       ),
     );
   }
+}
+class ScaleTransition5 extends PageRouteBuilder {
+  final Widget page;
+
+  ScaleTransition5(this.page)
+      : super(
+    pageBuilder: (context, animation, anotherAnimation) => page,
+    transitionDuration: Duration(milliseconds: 1000),
+    reverseTransitionDuration: Duration(milliseconds: 200),
+    transitionsBuilder: (context, animation, anotherAnimation, child) {
+      animation = CurvedAnimation(
+          curve: Curves.fastLinearToSlowEaseIn,
+          parent: animation,
+          reverseCurve: Curves.fastOutSlowIn);
+      return ScaleTransition(
+        alignment: Alignment.center,
+        scale: animation,
+        child: child,
+      );
+    },
+  );
 }
