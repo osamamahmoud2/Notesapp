@@ -1,6 +1,6 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:noteapp/Cubits/Notes_cubit/notes_cubit.dart';
 import 'package:noteapp/Models/Note_Model.dart';
 import 'package:noteapp/Views/Edit_Note_Veiw.dart';
 
@@ -28,7 +28,13 @@ final NoteModel notes;
               padding: const EdgeInsets.only(top: 16, bottom: 16),
               child: Text(notes.subtitel, style: TextStyle(color: Colors.black.withOpacity(0.4),fontSize: 18)),
             ),
-            trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.delete),color: Colors.black,iconSize: 30,)
+            trailing: IconButton(onPressed: (){
+              notes.delete();
+              BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              
+              content: Text('Note was Deleted')));
+            }, icon:const Icon(Icons.delete),color: Colors.black,iconSize: 30,)
           )
           ,Padding(
             padding: const EdgeInsets.only(right: 24),

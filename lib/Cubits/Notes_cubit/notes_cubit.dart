@@ -16,7 +16,7 @@ List<NoteModel>? notes;
     
       var notebox = Hive.box<NoteModel>(kNotesBoxs);
        notes =notebox.values.toList();
-     
+     emit(NotesSucess());
   }
 }
  
