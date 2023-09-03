@@ -54,6 +54,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 32,
           ),
+          ColorItemList(),
+          const SizedBox(
+            height: 32,
+          ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomBottom(
@@ -83,4 +87,72 @@ class _AddNoteFormState extends State<AddNoteForm> {
       ),
     );
   }
+}
+class ColorItam extends StatelessWidget {
+  const ColorItam({super.key, required this.isactive, required this.colors});
+final bool isactive;
+final Color colors;
+  @override
+  Widget build(BuildContext context) {
+    return isactive?
+     CircleAvatar(
+      radius: 37,
+      backgroundColor: Colors.white,
+      child:    CircleAvatar(
+         radius: 35,
+        backgroundColor:colors,
+       child: Icon(Icons.check,color: Colors.black,),
+       //Text('choiced',style: TextStyle(color: Colors.black),)
+      ),
+    ) :  CircleAvatar(
+      radius: 35,
+      backgroundColor:colors,
+    );
+  }
+}
+class ColorItemList extends StatefulWidget {
+  const ColorItemList({super.key});
+
+  @override
+  State<ColorItemList> createState() => _ColorItemListState();
+}
+
+class _ColorItemListState extends State<ColorItemList> {
+  int currentindex=0;
+  List<Color> colors=const[
+    Color(0xff011638),
+     Color(0xff2E294E),
+      Color(0xff9055A2),
+       Color(0xffD499B9),
+        Color(0xffE8C1C5),
+        Colors.white
+
+  ]
+  ;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 35*2.6,
+      child: ListView.builder(
+        itemCount: colors.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder:(context,index){
+        return  Padding(
+          padding:const   EdgeInsets.symmetric(horizontal: 5),
+          child:   GestureDetector(
+            onTap: (){
+              currentindex =index;
+              BlocProvider.of<AddNoteCubit>(context).color =colors[index];
+              setState(() {
+                
+              });
+            },
+            child: ColorItam(isactive: currentindex==index,colors: colors[index],)),
+        );
+      }),
+    );
+  }
+}
+
+class Index {
 }

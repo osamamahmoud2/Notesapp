@@ -23,10 +23,10 @@ final NoteModel notes;
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
           ListTile(
-            title:  Text(notes.titel, style: const TextStyle(color: Colors.black, fontSize: 26, ),),
+            title:  Text(notes.titel, style: const TextStyle(color: Colors.black, fontSize: 26,fontWeight: FontWeight.bold ),),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 16, bottom: 16),
-              child: Text(notes.subtitel, style: TextStyle(color: Colors.black.withOpacity(0.4),fontSize: 18)),
+              child: Text(notes.subtitel, style: TextStyle(color: Colors.black.withOpacity(0.4),fontSize: 18,fontWeight: FontWeight.bold , )),
             ),
             trailing: IconButton(onPressed: (){
               notes.delete();

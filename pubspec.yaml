@@ -86,9 +86,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Schyler
+    - family: Permanent Marker
       fonts:
-        - asset: assets/Fonts/Poppins-Regular.ttf
+        - asset: assets\Fonts\PermanentMarker-Regular.ttf
 
   
   # For details regarding fonts from package dependencies,
