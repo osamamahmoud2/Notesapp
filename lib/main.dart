@@ -4,8 +4,8 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:noteapp/Cubits/Notes_cubit/notes_cubit.dart';
 import 'package:noteapp/Models/Note_Model.dart';
 import 'package:noteapp/Simple_bloc_Observer.dart';
-import 'package:noteapp/Views/Constants.dart';
-import 'package:noteapp/Views/Notes_View.dart';
+import 'package:noteapp/Views/constanats.dart';
+import 'package:noteapp/Views/notesview.dart';
 
 void main() async {
   await Hive.initFlutter();

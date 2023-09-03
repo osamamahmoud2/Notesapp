@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/Cubits/Notes_cubit/notes_cubit.dart';
 import 'package:noteapp/Models/Note_Model.dart';
-import 'package:noteapp/Views/Edit_Note_Veiw.dart';
+import 'package:noteapp/Views/editveiwbody.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({Key? key,required this.notes}):super (key: key);

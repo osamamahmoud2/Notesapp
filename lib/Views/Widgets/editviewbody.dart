@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/Cubits/Notes_cubit/notes_cubit.dart';
-import 'package:noteapp/Views/Widgets/Custom_App_bar.dart';
-import 'package:noteapp/Views/Widgets/Custom_text_Field.dart';
+import 'package:noteapp/Views/Widgets/cutomappbar.dart';
+
 import '../../Models/Note_Model.dart';
+import 'cutomtextfield.dart';
 
 class EditViewBody extends StatefulWidget {
   const EditViewBody({Key? key, required this.notee}) : super(key: key);

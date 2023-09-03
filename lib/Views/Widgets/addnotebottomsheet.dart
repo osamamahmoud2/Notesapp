@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/Cubits/Notes_cubit/notes_cubit.dart';
 
 import '../../Cubits/add_Note_Cubit/add_note_cubit.dart';
-import 'addNoteSheetForm.dart';
+import 'AddNoteSheetForm.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
