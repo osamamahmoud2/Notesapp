@@ -12,7 +12,7 @@ final NoteModel notes;
     return GestureDetector(
       onTap: () {
         Navigator.push(
-                  context, ScaleTransition5(const EditNoteView()));
+                  context, ScaleTransition5( EditNoteView(notee: notes,)));
       },
       child: Container(
         padding:const EdgeInsets.only(top: 24, bottom: 26,left: 16),
