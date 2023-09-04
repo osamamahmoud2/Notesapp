@@ -96,16 +96,16 @@ final Color colors;
   Widget build(BuildContext context) {
     return isactive?
      CircleAvatar(
-      radius: 37,
+      radius: 27,
       backgroundColor: Colors.white,
       child:    CircleAvatar(
-         radius: 35,
+         radius: 25,
         backgroundColor:colors,
-       child: Icon(Icons.check,color: Colors.black,),
+       child:const  Icon(Icons.check,color: Colors.black,),
        //Text('choiced',style: TextStyle(color: Colors.black),)
       ),
     ) :  CircleAvatar(
-      radius: 35,
+      radius: 30,
       backgroundColor:colors,
     );
   }
@@ -120,12 +120,17 @@ class ColorItemList extends StatefulWidget {
 class _ColorItemListState extends State<ColorItemList> {
   int currentindex=0;
   List<Color> colors=const[
-    Color(0xff011638),
-     Color(0xff2E294E),
-      Color(0xff9055A2),
+    Color(0xff277da1),
+     Color(0xff02c39a),
+      Color(0xff212f45),
        Color(0xffD499B9),
         Color(0xffE8C1C5),
-        Colors.white
+        Colors.white,
+         Color(0xff011638),
+     Color(0xfff08080),
+      Color(0xffced4da),
+       Color(0xffb7b7a4),
+        Color(0xffeff6e0),
 
   ]
   ;

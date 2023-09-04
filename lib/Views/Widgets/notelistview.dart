@@ -23,9 +23,9 @@ class NotesListView extends StatelessWidget {
                   parent: AlwaysScrollableScrollPhysics()),
               itemCount: notes.length,
               padding: EdgeInsets.zero,
-              itemBuilder: ((BuildContext c, index) {
+              itemBuilder: ((BuildContext c, int i) {
                 return AnimationConfiguration.staggeredList(
-                    position: index,
+                    position: i,
                     delay: const Duration(milliseconds: 100),
                     child: SlideAnimation(
                         duration: const Duration(milliseconds: 2500),
@@ -39,7 +39,7 @@ class NotesListView extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 4),
                             child: NoteItem(
-                              notes: notes[index],
+                              notes: notes[i],
                             ),
                           ),
                         )));
