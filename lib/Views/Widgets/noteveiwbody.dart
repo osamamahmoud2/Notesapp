@@ -5,7 +5,6 @@ import 'package:noteapp/Views/Widgets/cutomappbar.dart';
 
 import 'notelistview.dart';
 
-
 class NotesViewBody extends StatefulWidget {
   const NotesViewBody({super.key});
 
@@ -14,14 +13,13 @@ class NotesViewBody extends StatefulWidget {
 }
 
 class _NotesViewBodyState extends State<NotesViewBody> {
-
-@override
+  @override
   void initState() {
-   BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
     super.initState();
   }
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
@@ -30,12 +28,13 @@ class _NotesViewBodyState extends State<NotesViewBody> {
           SizedBox(
             height: 40,
           ),
-          CustomAppbar(titel: 'Notes',icon: Icons.search,),
-          
+          CustomAppbar(
+            titel: 'Notes',
+            icon: Icons.search,
+          ),
           Expanded(child: NotesListView())
         ],
       ),
     );
   }
 }
- 

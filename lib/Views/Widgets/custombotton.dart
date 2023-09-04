@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import '../constanats.dart';
 
 class CustomBottom extends StatelessWidget {
-  const CustomBottom({Key? key,this.ontap, this.islouding = false}):super(key: key);
+  const CustomBottom({Key? key, this.ontap, this.islouding = false})
+      : super(key: key);
   final void Function()? ontap;
   final bool islouding;
   @override
