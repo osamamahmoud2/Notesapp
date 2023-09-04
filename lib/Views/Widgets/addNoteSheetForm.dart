@@ -77,7 +77,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         backgroundColor: Colors.transparent,
                         elevation: 0,
                         content: Container(
-                            height: 90,
+                            height: 40,
                             decoration: BoxDecoration(
                                 color: Colors.green.shade400,
                                 borderRadius: BorderRadius.circular(9999)),

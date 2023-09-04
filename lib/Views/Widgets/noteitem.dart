@@ -49,7 +49,7 @@ class NoteItem extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                         elevation: 0,
                         content: Container(
-                            height: 90,
+                            height: 40,
                             decoration: BoxDecoration(
                                 color: Colors.red.shade900,
                                 borderRadius: BorderRadius.circular(9999)),
